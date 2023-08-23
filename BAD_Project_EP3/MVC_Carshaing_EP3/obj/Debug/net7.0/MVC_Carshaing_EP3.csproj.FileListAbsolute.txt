@@ -1,0 +1,9 @@
+C:\Users\Abdel\OneDrive\Documents\Hogeschool Odisee\BAD\BAD_Project_EP3\MVC_Carshaing_EP3\obj\Debug\net7.0\MVC_Carshaing_EP3.csproj.AssemblyReference.cache
+C:\Users\Abdel\OneDrive\Documents\Hogeschool Odisee\BAD\BAD_Project_EP3\MVC_Carshaing_EP3\obj\Debug\net7.0\MVC_Carshaing_EP3.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Abdel\OneDrive\Documents\Hogeschool Odisee\BAD\BAD_Project_EP3\MVC_Carshaing_EP3\obj\Debug\net7.0\MVC_Carshaing_EP3.AssemblyInfoInputs.cache
+C:\Users\Abdel\OneDrive\Documents\Hogeschool Odisee\BAD\BAD_Project_EP3\MVC_Carshaing_EP3\obj\Debug\net7.0\MVC_Carshaing_EP3.AssemblyInfo.cs
+C:\Users\Abdel\OneDrive\Documents\Hogeschool Odisee\BAD\BAD_Project_EP3\MVC_Carshaing_EP3\obj\Debug\net7.0\MVC_Carshaing_EP3.csproj.CoreCompileInputs.cache
+C:\Users\Abdel\OneDrive\Documents\Hogeschool Odisee\BAD\BAD_Project_EP3\MVC_Carshaing_EP3\obj\Debug\net7.0\MVC_Carshaing_EP3.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Abdel\OneDrive\Documents\Hogeschool Odisee\BAD\BAD_Project_EP3\MVC_Carshaing_EP3\obj\Debug\net7.0\MVC_Carshaing_EP3.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Abdel\OneDrive\Documents\Hogeschool Odisee\BAD\BAD_Project_EP3\MVC_Carshaing_EP3\obj\Debug\net7.0\MVC_Carshaing_EP3.RazorAssemblyInfo.cache
+C:\Users\Abdel\OneDrive\Documents\Hogeschool Odisee\BAD\BAD_Project_EP3\MVC_Carshaing_EP3\obj\Debug\net7.0\MVC_Carshaing_EP3.RazorAssemblyInfo.cs
