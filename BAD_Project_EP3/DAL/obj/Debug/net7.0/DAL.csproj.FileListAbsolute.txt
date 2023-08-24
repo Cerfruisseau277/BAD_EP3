@@ -12,3 +12,17 @@ C:\Users\Abdel\OneDrive\Documents\Hogeschool Odisee\BAD\BAD_Project_EP3\DAL\obj\
 C:\Users\Abdel\OneDrive\Documents\Hogeschool Odisee\BAD\BAD_Project_EP3\DAL\obj\Debug\net7.0\DAL.pdb
 C:\Users\Abdel\OneDrive\Documents\Hogeschool Odisee\BAD\BAD_Project_EP3\DAL\obj\Debug\net7.0\DAL.genruntimeconfig.cache
 C:\Users\Abdel\OneDrive\Documents\Hogeschool Odisee\BAD\BAD_Project_EP3\DAL\obj\Debug\net7.0\ref\DAL.dll
+C:\Users\Abdel\OneDrive\Documents\Hogeschool Odisee\BAD\BAD_EP3\BAD_Project_EP3\DAL\bin\Debug\net7.0\DAL.deps.json
+C:\Users\Abdel\OneDrive\Documents\Hogeschool Odisee\BAD\BAD_EP3\BAD_Project_EP3\DAL\bin\Debug\net7.0\DAL.runtimeconfig.json
+C:\Users\Abdel\OneDrive\Documents\Hogeschool Odisee\BAD\BAD_EP3\BAD_Project_EP3\DAL\bin\Debug\net7.0\DAL.dll
+C:\Users\Abdel\OneDrive\Documents\Hogeschool Odisee\BAD\BAD_EP3\BAD_Project_EP3\DAL\bin\Debug\net7.0\DAL.pdb
+C:\Users\Abdel\OneDrive\Documents\Hogeschool Odisee\BAD\BAD_EP3\BAD_Project_EP3\DAL\obj\Debug\net7.0\DAL.csproj.AssemblyReference.cache
+C:\Users\Abdel\OneDrive\Documents\Hogeschool Odisee\BAD\BAD_EP3\BAD_Project_EP3\DAL\obj\Debug\net7.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Abdel\OneDrive\Documents\Hogeschool Odisee\BAD\BAD_EP3\BAD_Project_EP3\DAL\obj\Debug\net7.0\DAL.AssemblyInfoInputs.cache
+C:\Users\Abdel\OneDrive\Documents\Hogeschool Odisee\BAD\BAD_EP3\BAD_Project_EP3\DAL\obj\Debug\net7.0\DAL.AssemblyInfo.cs
+C:\Users\Abdel\OneDrive\Documents\Hogeschool Odisee\BAD\BAD_EP3\BAD_Project_EP3\DAL\obj\Debug\net7.0\DAL.csproj.CoreCompileInputs.cache
+C:\Users\Abdel\OneDrive\Documents\Hogeschool Odisee\BAD\BAD_EP3\BAD_Project_EP3\DAL\obj\Debug\net7.0\DAL.dll
+C:\Users\Abdel\OneDrive\Documents\Hogeschool Odisee\BAD\BAD_EP3\BAD_Project_EP3\DAL\obj\Debug\net7.0\refint\DAL.dll
+C:\Users\Abdel\OneDrive\Documents\Hogeschool Odisee\BAD\BAD_EP3\BAD_Project_EP3\DAL\obj\Debug\net7.0\DAL.pdb
+C:\Users\Abdel\OneDrive\Documents\Hogeschool Odisee\BAD\BAD_EP3\BAD_Project_EP3\DAL\obj\Debug\net7.0\DAL.genruntimeconfig.cache
+C:\Users\Abdel\OneDrive\Documents\Hogeschool Odisee\BAD\BAD_EP3\BAD_Project_EP3\DAL\obj\Debug\net7.0\ref\DAL.dll

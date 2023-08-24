@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DAL.Entities;
 
-public partial class ApplicationDbContext : IdentityDbContext<User>
+public class ApplicationDbContext : IdentityDbContext<User>
 {
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
         : base(options)
@@ -28,5 +28,6 @@ public partial class ApplicationDbContext : IdentityDbContext<User>
     }
 
     public DbSet<Car> Cars { get; set; }
+    public DbSet<User> Users { get; set; }
     public DbSet<Borrowing> Borrowings { get; set; }
 }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "WgEF4fs21U5xXTTmoxioG+hA/xkVs8PiizxSdnKW++/ybbetpawnLR0RA0vX8dNs047BpbX8HvQ9y3ihjnt00A==",
+  "dgSpecHash": "4Eq+0gJ6iCR7l0hF5Cqk4d73cqv6gxzG/bqJHroGgOYMtNH/4HDwga+OzdlOjI+NqMe18aUD9wciE2a6S1CZWQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Abdel\\OneDrive\\Documents\\Hogeschool Odisee\\BAD\\BAD_Project_EP3\\DAL\\DAL.csproj",
+  "projectFilePath": "C:\\Users\\Abdel\\OneDrive\\Documents\\Hogeschool Odisee\\BAD\\BAD_EP3\\BAD_Project_EP3\\DAL\\DAL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Abdel\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Abdel\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

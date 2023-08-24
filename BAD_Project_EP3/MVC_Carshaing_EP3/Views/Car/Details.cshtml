@@ -1,0 +1,24 @@
+﻿@using MVC_Carshaing_EP3.ViewModel;
+@model DetailsCarViewModel
+@{
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <h1>@Model.Car.Brand @Model.Car.Model</h1>
+                <div class="card">
+                    <div class="card-body" id="bckCard">
+                        <strong><p class="card-text">Owner: @Model.NameOwner</p></strong>
+                        <hr/>
+                        <p class="card-text"><strong>Fuel:</strong> @Model.Car.FuelType</p>
+                        <p class="card-text"><strong>Year:</strong> @Model.Car.Year</p>
+                        <p class="card-text"><strong>Seats places:</strong> @Model.Car.Seats</p>
+                        <p class="card-text"><strong>Transmission:</strong> @Model.Car.Transmission</p>
+                        <p class="card-text"><strong>Description:</strong> @Model.Car.Description</p>
+                    </div>
+                    <img src="@Model.Car.ImageURL" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+}
+

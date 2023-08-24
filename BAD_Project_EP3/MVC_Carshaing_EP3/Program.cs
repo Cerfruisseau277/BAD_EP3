@@ -1,7 +1,11 @@
 using DAL.Entities;
+using DAL.Interface;
+using DAL.Model;
+using DAL.Services;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.V4.Pages.Account.Internal;
 using Microsoft.EntityFrameworkCore;
-using MVC_Carshaing_EP3.Data;
+using DAL;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,11 +13,12 @@ var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
 builder.Services.AddSession();
+builder.Services.AddScoped<ICarService, CarService>();
+builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddDefaultIdentity<User>(options => {options.Password.RequireLowercase = true;options.Password.RequireUppercase = true;options.Password.RequiredLength = 6;}).AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddAuthorization(options => options.AddPolicy("Admin", builder => builder.RequireClaim("IsAdmin", "true")));
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -33,6 +38,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(

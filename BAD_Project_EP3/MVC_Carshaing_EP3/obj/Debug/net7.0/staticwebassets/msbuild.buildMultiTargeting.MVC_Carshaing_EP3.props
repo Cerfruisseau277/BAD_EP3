@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\MVC_Carshaing_EP3.props" />
+</Project>
