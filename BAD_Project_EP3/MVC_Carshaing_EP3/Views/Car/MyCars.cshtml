@@ -1,0 +1,42 @@
+﻿@using DAL.Model;
+@using DAL.Interface;
+@using DAL.Services;
+@model List<Car>
+@{
+    <hr />
+    <div class="container">
+        <h1 class="text-center">Cars</h1>
+        <hr />
+        @if (Model.Count() != 0)
+        {
+            <div class="row">
+                @foreach (var car in Model)
+                {
+                    <div class="col-md-4 mb-4">
+                        <div class="card" id="imgCar">
+                            <img class="card-img-top" src="@car.ImageURL">
+                            <div id="bckCard" class="card-body">
+                                <h5 class="card-title" id="title">@car.Brand @car.Model</h5>
+                                <p class="card-text">Fuel: @car.FuelType</p>
+                                <p class="card-text">Year: @car.Year</p>
+                                <div id="displayFlex">
+                                    <a asp-controller="Car" asp-action="Edit" asp-route-id="@car.Id" class="btn btn-primary">Edit</a>
+                                    <form asp-controller="Car" asp-action="Delete" asp-route-id="@car.Id" id="mLeft">
+                                        <input class="btn btn-danger" type="submit" value="Delete" />
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+            <hr />
+            <a asp-controller="Car" asp-action="Create" class="btn btn-dark">New Car</a>
+        }
+        else
+        {
+            <p class="card-text">You don't have any Car</p>
+            <a asp-controller="Car" asp-action="Create" class="btn btn-dark">Add a new car</a>
+        }
+    </div>
+}

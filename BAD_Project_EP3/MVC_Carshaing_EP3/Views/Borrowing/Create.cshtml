@@ -1,0 +1,36 @@
+﻿@using MVC_Carshaing_EP3.ViewModel;
+@model AddBorrowingViewModel;
+@{
+    string today = DateTime.Now.ToString("yyyy-MM-dd : HH:mm");
+    string todayTen = DateTime.Now.AddDays(10).ToString("yyyy-MM-dd : HH:mm");
+}
+
+<h1>Reserve a car</h1>
+
+<form asp-controller="Borrowing" asp-action="Create" method="post">
+    <div asp-validation-summary="All" class="text-danger">
+        @if (Model.Message != ""){<p>@Model.Message</p>}
+    </div>
+    <div style="display: none" class="form-group">
+        <label asp-for="CarID">CarID of Car</label>
+        <input readonly asp-for="CarID" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="StartDateTime"></label>
+        <input type="datetime-local" value="@today" asp-for="StartDateTime" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="EndDateTime"></label>
+        <input type="datetime-local" value="@todayTen" asp-for="EndDateTime" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Message"></label>
+        <textarea asp-for="Message" class="form-control"></textarea>
+    </div>
+    <div class="form-group mt-2">
+        <input type="submit" value="Reserve" class="btn btn-primary" />
+    </div>
+</form>

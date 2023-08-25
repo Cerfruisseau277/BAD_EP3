@@ -10,7 +10,8 @@ namespace DAL.Model
     {
         Petrol,
         Diesel,
-        CNG
+        CNG,
+        Electric
     }
 
     public enum Transmission

@@ -3,7 +3,7 @@
 @{
     <div class="container">
         <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-8" id="Cardstyle">
                 <h1>@Model.Car.Brand @Model.Car.Model</h1>
                 <div class="card">
                     <div class="card-body" id="bckCard">
@@ -17,6 +17,8 @@
                     </div>
                     <img src="@Model.Car.ImageURL" class="img-fluid">
                 </div>
+                <br>
+                <a id="displayFlexBtn" asp-controller="Borrowing" asp-action="Create" asp-route-id="@Model.Car.Id" class="btn btn-primary">Rent this car</a>
             </div>
         </div>
     </div>

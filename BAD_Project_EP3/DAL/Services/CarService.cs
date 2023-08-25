@@ -23,6 +23,11 @@ namespace DAL.Services
             return dbContext.Cars.ToList();
         }
 
+        public List<Car> GetCarByOwner(string id)
+        {
+            return dbContext.Cars.Where(c => c.OwnerId == id).ToList();
+        }
+
         public Car GetCar(int id)
         {
             return dbContext.Cars.SingleOrDefault(c => c.Id == id);
@@ -31,6 +36,27 @@ namespace DAL.Services
         public void AddCar(Car car)
         {
             dbContext.Cars.Add(car);    
+            dbContext.SaveChanges();
+        }
+
+        public void UpdateCar(Car car)
+        {
+            Car carToUpdate = GetCar(car.Id); ;
+            carToUpdate.Brand = car.Brand;
+            carToUpdate.Model = car.Model;
+            carToUpdate.Description = car.Description;
+            carToUpdate.Year = car.Year;
+            carToUpdate.FuelType = car.FuelType;
+            carToUpdate.Transmission = car.Transmission;
+            carToUpdate.ImageURL = car.ImageURL;
+            carToUpdate.OwnerId = car.OwnerId;
+            dbContext.SaveChanges();
+        }
+
+        public void deleteCar(int id)
+        {
+            Car car = dbContext.Cars.Find(id);
+            dbContext.Remove(car);
             dbContext.SaveChanges();
         }
     }

@@ -1,0 +1,57 @@
+﻿@using MVC_Carshaing_EP3.ViewModel;
+@model List<FromMeViewModel>
+<h1>Overview my reservations</h1>
+<hr />
+
+@if (Model == null)
+{
+    <p>No Reservations were found</p>
+}
+else
+{
+    <table class="table rounded">
+        <thead class="thead-dark text-white">
+            <tr>
+                <th>Car</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Borrower Name</th>
+                <th>Status</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (FromMeViewModel from in Model)
+            {
+                <tr>
+                    <td>@from.NameCar</td>
+                    <td>@from.Borrowing.StartDateTime</td>
+                    <td>@from.Borrowing.EndDateTime</td>
+                    <td>@from.NameUser</td>
+                    @switch ((int)from.Borrowing.Status)
+                    {
+                        case 0:
+                            <td style="color: dodgerblue; font-weight:bold;">@from.Borrowing.Status</td>
+                            break;
+                        case 1:
+                            <td style="color: mediumaquamarine; font-weight:bold;">@from.Borrowing.Status</td>
+                            break;
+                        case 2:
+                            <td style="color: crimson; font-weight:bold;">@from.Borrowing.Status</td>
+                            break;
+                    }
+                    @if (from.Borrowing.StartDateTime > DateTime.Now)
+                    {
+                        <td><form asp-action="Delete"><input type="submit" value="Delete" asp-controller="Admin" asp-action="Delete" asp-route-id="@from.Borrowing.Id" class="btn btn-danger" /></form></td>
+                    }
+                    else
+                    {
+                        <td>Reservation finished</td>
+                    }
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+

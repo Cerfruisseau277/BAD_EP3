@@ -50,3 +50,27 @@ thead {
 .btnSearch {
     vertical-align: baseline;
 }
+
+#Cardstyle {
+    max-width: 45%;
+    padding-right: calc(var(--bs-gutter-x) * .5);
+    padding-left: calc(var(--bs-gutter-x) * .5);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+}
+
+#displayFlex {
+    display: flex;
+    justify-content: start;
+}
+
+#displayFlexBtn {
+    width: 20%;
+    margin-left: 40%;
+}
+
+#mLeft {
+    margin-left: 3%;
+}

@@ -1,0 +1,71 @@
+﻿@using MVC_Carshaing_EP3.ViewModel;
+@model EditCarViewModel
+
+<h1>New Car</h1>
+<hr />
+<form asp-action="Edit" method="post">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="Brand">Brand</label>
+        <input asp-for="Brand" value="@Model.Brand" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Model">Model</label>
+        <input asp-for="Model" value="@Model.Model" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Description">Description</label>
+        <input asp-for="Description" value="@Model.Description" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Year">Year</label>
+        <input min="1900" type="number" asp-for="Year" value="@Model.Year" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Seats">Seats</label>
+        <input min="2" asp-for="Seats" value="@Model.Seats" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="FuelType">Fuel</label>
+        <select asp-for="FuelType" class="form-select">
+            @{ // Niet mooie oplossing om selectbox direct de juiste value geven die door de viewmodel gegeven word
+            var fuelOptions = new List<Tuple<int, string>>
+            {Tuple.Create(0, "Petrol"),Tuple.Create(1, "Diesel"),Tuple.Create(2, "CNG"),Tuple.Create(3, "Electric"),};
+            fuelOptions.Sort((a, b) => a.Item1.CompareTo(b.Item1));
+            foreach (var option in fuelOptions){
+            <option value="@option.Item1">@option.Item2</option>}
+            }
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Transmission">Transmission</label>
+        <select asp-for="Transmission" class="form-select">
+            @if (Model.Transmission == 0)
+            {
+                <option value="0">Automatic</option>
+                <option value="1">Manual</option>
+            }
+            else
+            {
+                <option value="1">Manual</option>
+                <option value="0">Automatic</option>
+            }
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="imgURL">Image URL (Ideal format is 1.5 width & 1 height)</label>
+        <input asp-for="imgURL" value="@Model.imgURL" class="form-control" />
+    </div>
+    <br />
+    <div class="form-group mt-2">
+        <input type="submit" value="Edit" class="btn btn-primary" />
+    </div>
+</form>
+

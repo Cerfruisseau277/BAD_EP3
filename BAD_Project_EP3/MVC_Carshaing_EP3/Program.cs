@@ -17,6 +17,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddSession();
 builder.Services.AddScoped<ICarService, CarService>();
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IBorrowingService, BorrowingService>();
 builder.Services.AddDefaultIdentity<User>(options => {options.Password.RequireLowercase = true;options.Password.RequireUppercase = true;options.Password.RequiredLength = 6;}).AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddAuthorization(options => options.AddPolicy("Admin", builder => builder.RequireClaim("IsAdmin", "true")));
 var app = builder.Build();
