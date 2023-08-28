@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\WebApi_Carsharing_EP3.props" />
+</Project>

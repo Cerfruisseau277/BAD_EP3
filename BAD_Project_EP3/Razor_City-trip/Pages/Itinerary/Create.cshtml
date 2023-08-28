@@ -1,0 +1,40 @@
+﻿@page
+@model Razor_City_trip.Pages.Itinerary.CreateModel
+@{
+}
+<form method="post">
+    <div>
+        <label asp-for="InputModel.Name">Name</label>
+        <input asp-for="InputModel.Name" class="form-control" />
+        <span asp-validation-for="InputModel.Name" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="InputModel.Destination">Destination</label>
+        <input asp-for="InputModel.Destination" class="form-control" />
+        <span asp-validation-for="InputModel.Destination" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="InputModel.Description">Description</label>
+        <textarea asp-for="InputModel.Description" class="form-control"></textarea>
+        <span asp-validation-for="InputModel.Description" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="InputModel.Duration">Duration in days</label>
+        <input min="1" asp-for="InputModel.Duration" type="number" class="form-control" />
+        <span asp-validation-for="InputModel.Duration" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="InputModel.CategoryId">Category</label>
+        <select asp-for="InputModel.CategoryId" class="form-control">
+            @foreach(var i in Model.Categories)
+            {
+                <option value="@i.Id">@i.Name</option>
+            }
+        </select>
+        <span asp-validation-for="InputModel.CategoryId" class="text-danger"></span>
+    </div>
+    <div>
+        <button style="margin-top: 1rem;" type="submit" class="btn btn-primary">Create</button>
+    </div>
+</form>
+

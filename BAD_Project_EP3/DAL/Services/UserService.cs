@@ -28,5 +28,18 @@ namespace DAL.Services
             User user = dbContext.Users.SingleOrDefault(c => c.Id == id);
             return user.Firstname + " " + user.LastName;
         }
+
+        public User GetUserFromUsername(string username)
+        {
+            User u = new User();
+            foreach (User user in dbContext.Users)
+            {
+                if (user.Email == username)
+                {
+                    u = user;
+                }
+            }
+            return u;
+        }
     }
 }

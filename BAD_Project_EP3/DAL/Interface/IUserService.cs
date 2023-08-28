@@ -11,5 +11,6 @@ namespace DAL.Interface
     {
         List<User> GetAllUser();
         string GetUserName(string id);
+        User GetUserFromUsername(string username);
     }
 }

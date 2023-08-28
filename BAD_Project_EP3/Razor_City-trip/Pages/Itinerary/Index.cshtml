@@ -1,0 +1,25 @@
+﻿@page
+@using Razor_City_trip.Data.Model
+@model Razor_City_trip.Pages.Itinerary.IndexModel
+@{
+}
+
+<div class="container mt-4">
+    <div class="row">
+        @foreach (Itinerary i in Model.Itineraties)
+        {
+            <div class="col-md-4" style="margin-bottom: 0rem; padding: 0.5rem;">
+                <div class="card">
+                    <p style="font-size: 24px; margin-left: 12px; margin-top: 12px;">@i.Name</p>
+                    <p style="font-size: 18px; margin-left: 12px; margin-top: -10px">@i.Description</p>
+                    <p id="klein" style="margin-left: 12px;">Duration: @i.Duration days</p>
+                    <div style="text-align: right; margin-top: -30px; margin-right: 10px; margin-bottom: 10px;">
+                        <a class="btn btn-primary" asp-page="/Itinerary/Details" asp-route-id="@i.Id">Details</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    <hr />
+    <a class="btn btn-primary" asp-page="/Itinerary/Create">Create a new Itinerary</a>
+</div>

@@ -1,0 +1,98 @@
+﻿@page "{id}"
+@model Razor_City_trip.Pages.Itinerary.DetailsModel
+@{
+}
+
+<h1>Itinerary</h1>
+<hr />
+<table style="width:50%; border:none;">
+    <tr>
+        <th>Name</th>
+        <td>@Model.Itinerary.Name</td>
+    </tr>
+    <tr>
+        <th>Destination</th>
+        <td>@Model.Itinerary.Destination</td>
+    </tr>
+    <tr>
+        <th>Description</th>
+        <td>@Model.Itinerary.Description</td>
+    </tr> 
+    <tr>
+        <th>Duration</th>
+        <td>@Model.Itinerary.Duration days</td>
+    </tr>  
+    <tr>
+        <th>Category</th>
+        <td>@Model.CategoryName</td>
+    </tr>
+</table>
+<hr />
+<h1>Activities</h1>
+<form method="post">
+    <div>
+        <label asp-for="InputModel.NameA">Name</label>
+        <input asp-for="InputModel.NameA" class="form-control" />
+        <span asp-validation-for="InputModel.NameA" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="InputModel.DescriptionA">Description</label>
+        <textarea asp-for="InputModel.DescriptionA" class="form-control"></textarea>
+        <span asp-validation-for="InputModel.DescriptionA" class="text-danger"></span>
+    </div>
+    <div style="display: flex;">
+        <div>
+            <label asp-for="InputModel.Day">Day</label>
+            <select style="width: 80px;" asp-for="InputModel.Day" class="form-control">
+                @for (int i = 1; i < Model.Itinerary.Duration + 1; i++)
+                {
+                    <option value="@i">Day @i</option>
+                }
+            </select>
+            <span asp-validation-for="InputModel.Day" class="text-danger"></span>
+        </div>
+        <div style="margin-left: 1rem;">
+            <label asp-for="InputModel.StartTime">Start Time</label>
+            <input type="time" value="08:00" asp-for="InputModel.StartTime" class="form-control" />
+            <span asp-validation-for="InputModel.StartTime" class="text-danger"></span>
+        </div>
+        <div style="margin-left: 1rem;">
+            <label asp-for="InputModel.EndTime">End Time</label>
+            <input type="time" value="12:00" asp-for="InputModel.EndTime" class="form-control" />
+            <span asp-validation-for="InputModel.EndTime" class="text-danger"></span>
+        </div>
+    </div>
+    <div>
+        <button style="margin-top: 1rem;" type="submit" class="btn btn-primary">Create</button>
+    </div>
+</form>
+@for (int i = 1; i < Model.Itinerary.Duration + 1; i++)
+{
+    @if (Model.Activities.Where(c => c.Day == i).Count() != 0)
+    {
+        <h3 style="margin-top: 1rem;">Day @i</h3>
+        <table width="100%">
+            <tr style="height: 50px;">
+                <th style="width: 10%; border-bottom: 2px solid Black;">Time</th>
+                <th style="width: 20%; border-bottom: 2px solid Black;">Name</th>
+                <th style="width: 60%; border-bottom: 2px solid Black;">Description</th>
+                <th style="width: 10%; border-bottom: 2px solid Black;"></th>
+            </tr>
+            @foreach (var m in Model.Activities)
+            {
+                if (m.Day == i)
+                {
+                    <tr style="height: 65px;">
+                        <td style="border-bottom: 1px solid #ddd;">
+                            @m.StartTime.ToString("hh':'mm") - @m.EndTime.ToString("hh':'mm")
+                        </td>
+                        <td style="border-bottom: 1px solid #ddd;">@m.Name</td>
+                        <td style="border-bottom: 1px solid #ddd;">@m.Description</td>
+                        <td style="border-bottom: 1px solid #ddd;"><form method="post"><button asp-page-handler="Delete" style="margin: 0.4rem, 0.2rem, 0.4rem, 0;" asp-route-id="@m.Id" type="submit" class="btn btn-danger">Delete</button></form></td>
+                    </tr>
+                }
+            }
+        </table>
+    }
+}
+
