@@ -59,10 +59,10 @@ namespace Razor_City_trip.Pages.Itinerary
 
         public IActionResult OnPostDelete(int id)
         {
-            _serviceA.DeleteActivity(Id);
-            Itinerary = _serviceI.GetItinerary(Id);
+            Itinerary = _serviceI.GetItinerary(_serviceA.GetActivity(id));
             Activities = _serviceA.GetActivitiesOfItinerary(Itinerary.Id);
-            return Page();
+            _serviceA.DeleteActivity(id);
+            return RedirectToPage("Details", new { id = Itinerary.Id});
         }
 
         public class Input

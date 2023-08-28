@@ -16,6 +16,11 @@ namespace Razor_City_trip.Data.Services
             return dbContext.Activities.Where(c => c.ItineraryId == id).ToList();
         }
 
+        public int GetActivity(int id)
+        {
+            return dbContext.Activities.FirstOrDefault(c => c.Id == id).ItineraryId;
+        }
+
         public void SetActivity(Activity activity)
         {
             dbContext.Activities.Add(activity);
