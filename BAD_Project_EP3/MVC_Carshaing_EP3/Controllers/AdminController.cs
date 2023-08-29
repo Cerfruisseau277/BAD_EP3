@@ -27,12 +27,14 @@ namespace MVC_Carshaing_EP3.Controllers
             foreach (var b in _serviceB.GetAllBorrowing())
             {
                 FromMeViewModel fromMe = new FromMeViewModel();
-                Car car = new Car();
-                car = _serviceC.GetCar(b.CarId);
-                fromMe.NameUser = _serviceU.GetUserName(b.BorrowerId);
-                fromMe.NameCar = car.Brand + " " + car.Model;
-                fromMe.Borrowing = b;
-                list.Add(fromMe);
+                Car car = _serviceC.GetCar(b.CarId);
+                if (car != null)
+                {
+                    fromMe.NameUser = _serviceU.GetUserName(b.BorrowerId);
+                    fromMe.NameCar = car.Brand + " " + car.Model;
+                    fromMe.Borrowing = b;
+                    list.Add(fromMe);
+                }
             }
             list.Reverse();
             return View(list);

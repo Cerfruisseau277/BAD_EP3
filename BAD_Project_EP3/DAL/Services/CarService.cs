@@ -30,7 +30,7 @@ namespace DAL.Services
 
         public Car GetCar(int id)
         {
-            return dbContext.Cars.SingleOrDefault(c => c.Id == id);
+            return dbContext.Cars.FirstOrDefault(c => c.Id == id);
         }
 
         public void AddCar(Car car)
@@ -56,6 +56,8 @@ namespace DAL.Services
         public void deleteCar(int id)
         {
             Car car = dbContext.Cars.Find(id);
+            List<Borrowing> borrowings = dbContext.Borrowings.Where(c => c.CarId == id).ToList();
+            dbContext.Borrowings.RemoveRange(borrowings);
             dbContext.Remove(car);
             dbContext.SaveChanges();
         }

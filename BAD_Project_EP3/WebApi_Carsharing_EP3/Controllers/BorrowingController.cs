@@ -70,8 +70,8 @@ namespace WebApi_Carsharing_EP3.Controllers
             {
                 foreach (var b in _serviceB.GetAllBorrowing())
                 {
-                    if (b.BorrowerId == login.Id)
-                    {
+                   // if (b.BorrowerId == login.Id)
+                   // {
                         BorrowingDTO fromMe = new BorrowingDTO();
                         fromMe.Id = b.Id;
                         fromMe.StartDateTime = b.StartDateTime;
@@ -81,7 +81,8 @@ namespace WebApi_Carsharing_EP3.Controllers
                         fromMe.BorrowerId = b.BorrowerId;
                         fromMe.Message = b.Message;
                         list.Add(fromMe);
-                    }
+                    //}
+                    
                 }
                 list.Reverse();
             }
